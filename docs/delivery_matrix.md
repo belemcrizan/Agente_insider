@@ -22,7 +22,7 @@ Estado em 2026-10-15. **Implementação testada localmente não equivale a integ
 | Notebook SageMaker | Estrutura e sete células verificadas em Python | Importação, bloqueios e estados reais sem fallback | `scripts/verify_notebook.py` | Kernel/SDK/dados no SageMaker | Host local bloqueou sockets de Jupyter | Executar também `--kernel` no SageMaker |
 | Pacote e CLI | Instalação e build locais verificados | Wheel/sdist, prompts incluídos e diagnóstico | Testes da CLI e importação do pacote | Ambiente corporativo homologado | Dependências podem diferir no destino | Instalar e executar doctor/testes |
 | Documentação e diagrama | Entregues | Guias, metodologia, segurança, roteiro e Mermaid | Revisão de referências e conteúdo público | Aprovação da documentação interna adicional | Roteiro não é relatório de resultado real | Usar a documentação na validação com responsáveis |
-| CI | Workflow de verificação incluído | Configuração para Python 3.10 e 3.12 | Checks locais equivalentes | Execução no GitHub após publicação | Resultado remoto ainda precisa ser observado | Conferir aba Actions |
+| CI | Aprovado no GitHub em Python 3.10 e 3.12 | [Execução 38768885316](https://github.com/belemcrizan/Agente_insider/actions/runs/38768885316) concluída com sucesso | Instalação, lint, testes, notebook local, scanner e build nas duas versões | Nenhuma para a validação técnica desta versão | CI não acessa dados corporativos nem SDK privado | Manter os checks nas próximas alterações |
 
 ## Aceite técnico no ambiente real
 

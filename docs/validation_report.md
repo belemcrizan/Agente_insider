@@ -16,6 +16,7 @@ Data: 2026-10-15. Ambiente: Linux, Python 3.12.14. Escopo: software local com da
 | Kernel Jupyter local | Não executado com sucesso: host bloqueou sockets TCP e IPC; validação direta das células passou |
 | Instalação editável | `python -m pip install -e '.[aws,dev,notebook]'` concluído |
 | Build | `python -m build --no-isolation` gerou wheel e sdist |
+| GitHub Actions | [Execução 38768885316](https://github.com/belemcrizan/Agente_insider/actions/runs/38768885316) aprovada nas matrizes Python 3.10 e 3.12: instalação, lint, testes, notebook em modo local, scanner e build |
 | Revisão automática de publicação | Sem bloqueios detectados nos arquivos de código/documentação selecionados; notebook sem outputs |
 | AWS e dados reais | Não executados; dependem do SageMaker/IAM/fontes reais |
 | Redução de FP / risco de FN | Não medidos; dependem de histórico, método e avaliação humana |
@@ -32,6 +33,6 @@ Data: 2026-10-15. Ambiente: Linux, Python 3.12.14. Escopo: software local com da
 | ruff | 0.17.1 |
 | setuptools / build | 84.0.0 / 1.6.1 |
 
-As faixas de dependências estão em `pyproject.toml`. Homologar/pinar as versões no ambiente corporativo antes de exigir reprodutibilidade entre hosts. Python 3.10 está declarado como suportado e configurado no workflow; o teste local foi feito somente em 3.12.
+As faixas de dependências estão em `pyproject.toml`. Homologar/pinar as versões no ambiente corporativo antes de exigir reprodutibilidade entre hosts. O teste local foi feito em 3.12; o workflow também aprovou a execução em Python 3.10.
 
 O build não valida o SDK corporativo. Cobertura não mede acurácia, segurança semântica ou qualidade de hipóteses. O notebook publicado não contém saídas desta execução nem dados de clientes. A cadeia de hashes é auditabilidade local, sem assinatura ou imutabilidade externa.
