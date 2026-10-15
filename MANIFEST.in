@@ -1,0 +1,7 @@
+include README.md pyproject.toml .gitignore .env.example
+recursive-include docs *.md *.mmd
+recursive-include notebooks *.ipynb
+recursive-include scripts *.py
+recursive-include tests *.py
+recursive-include .github *.yml
+global-exclude __pycache__ *.py[cod]

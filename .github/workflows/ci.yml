@@ -1,0 +1,26 @@
+name: Qualidade do agente_insider
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install -e '.[aws,dev,notebook]'
+      - run: python -m ruff check .
+      - run: python -m pytest --cov=agente_insider --cov-report=term-missing
+      - run: python scripts/verify_notebook.py
+      - run: python scripts/check_publication.py
+      - run: python -m build

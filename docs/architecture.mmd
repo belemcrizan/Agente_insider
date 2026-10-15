@@ -1,0 +1,16 @@
+flowchart TD
+  R["Monitoramento e regras preservadas"] --> P["Pipeline existente no SageMaker"]
+  P --> A["Adaptador de RunReport"]
+  G["Glue e Athena opcionais"] --> A
+  A --> Q["Qualidade e snapshot rastreável"]
+  Q --> O["Orquestrador e contratos"]
+  O --> H["Hipóteses"]
+  H --> I["Investigação"]
+  I --> C["Contraprovas"]
+  C --> V["Método"]
+  V --> K["Risco e controles"]
+  K --> E["Síntese executiva"]
+  E --> U["Revisão humana e testes futuros"]
+  O -.-> B["Gateway IARA autorizado"]
+  O -.-> L["Auditoria e checkpoints locais"]
+  O --> F["Falha bloqueia dependentes"]
